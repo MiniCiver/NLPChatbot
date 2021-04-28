@@ -1,7 +1,6 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
-nltk.download('punkt')
 
 import numpy as np
 import tflearn
@@ -9,6 +8,11 @@ import tensorflow as tf
 import random
 import json
 import pickle
+
+try:
+    nltk.download('punkt')
+except:
+    pass
 
 with open("intents.json") as file:
     data = json.load(file)
@@ -63,10 +67,10 @@ except:
     training = np.array(training)
     output = np.array(output)
 
-    with open("data.pickle", "rb") as f:
+    with open("data.pickle", "wb") as f:
         pickle.dump((words, labels, training, output), f)
 
-#tf.reset_default_graph()
+tf.compat.v1.reset_default_graph()
 
 net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 8)
@@ -103,16 +107,19 @@ def chat():
         if inp.lower() == "quit":
             break
 
-        results = model.predict([bag_of_words(inp, words)])
+        results = model.predict([bag_of_words(inp, words)])[0]
         print(results)
         results_index = np.argmax(results)
         tag = labels[results_index]
         print(tag)
 
-        for tg in data["intents"]:
-            if tg["tag"] == tag:
-                responses = tg["responses"]
+        if results[results_index] > 0.7:
+            for tg in data["intents"]:
+                if tg["tag"] == tag:
+                    responses = tg["responses"]
         
-        print(random.choice(responses))
+            print(random.choice(responses))
+        else:
+            print("I didn't get that, try again.")
 
 chat()
