@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/xavi/Documents/DAW-Bio_Projects/NLPChatbot/app/aibot/model.tflearn"
+all_model_checkpoint_paths: "/home/xavi/Documents/DAW-Bio_Projects/NLPChatbot/app/aibot/model.tflearn"

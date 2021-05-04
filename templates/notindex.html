@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link href="{{ url_for('static', path='/styles/styles.scss') }}" type="text/css" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='/images/barbericon.png') }}" type="image/png" rel="shortcut icon"> 
+        <title>Barber's Shop</title>
+
+    </head>
+    <body>
+        
+        <div id="live-chat">
+            <header class="clearfix">
+                <a href="#" class="chat-close">x</a>
+                <h4>Chat</h4>
+            </header>
+            <div class="chat">
+                <div class="chat-history" id="chat-history">
+                </div> <!-- end chat-history -->
+                <div class="type">
+                    <input type="text" id="inputChat">
+                    <button onclick="getData()">Send</button>
+                </div>
+            </div> <!-- end chat -->
+        </div> <!-- end live-chat -->
+    
+    </body>
+    <script>
+        (function() {
+
+            $('#live-chat header').on('click', function() {
+
+                $('.chat').slideToggle(300, 'swing');
+                $('.chat-message-counter').fadeToggle(300, 'swing');
+            });
+            $('.chat-close').on('click', function(e) {
+                e.preventDefault();
+                $('#live-chat').fadeOut(300);
+            });
+        }) ();
+
+        var messages = document.getElementById("chat-history").innerHTML;
+        function getData() {
+            let currentDate = new Date();
+            let time = currentDate.getHours() + ":" + currentDate.getMinutes();
+            text = $("#inputChat").val();
+            $("#inputChat").val("");
+
+            messages += '<div class="chat-message clearfix"><img src="" alt="" width="32" height="32"><div class="chat-message-content clearfix"><span class="chat-time">' + time + '</span><h5>You</h5><p>' + text + '</p></div></div><hr>';
+
+            $("#chat-history").html(messages);
+
+            $.ajax({
+                url: "http://127.0.0.1:9000/chat",
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                processData: false,
+                data: JSON.stringify({chatInput:text}),
+                success: function (data) {
+                    //messages += "<div><p>" + data[0] + "</p></div>";
+                    //$("#outputChat").html(messages);
+                    //$("#outputChat").html(data[0])
+                    messages += '<div class="chat-message clearfix"><img src="" alt="" width="32" height="32"><div class="chat-message-content clearfix"><span class="chat-time">' + time + '</span><h5>Assistant</h5><p>' + data[0] + '</p></div></div><hr>';
+                    $("#chat-history").html(messages);
+                },
+                error: function(){
+                    alert("Cannot get data");
+                }
+            });
+        }
+    </script>
+</html>
