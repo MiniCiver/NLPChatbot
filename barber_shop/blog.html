@@ -8,7 +8,7 @@
         <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="{{ url_for('static', path='img/barbericon.png') }}" type="image/png" rel="shortcut icon"> 
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="{{ url_for('static', path='lib/animate/animate.min.css') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet"> 
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{ url_for('static', path='css/style.css') }}" rel="stylesheet"> 
     </head>
 
     <body>
@@ -59,27 +59,27 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">Barber <span>X</span></a>
+                <a href="/" class="navbar-brand">Barber <span>X</span></a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link">Price</a>
-                        <a href="team.html" class="nav-item nav-link">Barber</a>
-                        <a href="portfolio.html" class="nav-item nav-link">Gallery</a>
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="/about" class="nav-item nav-link">About</a>
+                        <a href="/service" class="nav-item nav-link">Service</a>
+                        <a href="/price" class="nav-item nav-link">Price</a>
+                        <a href="/team" class="nav-item nav-link">Barber</a>
+                        <a href="/portfolio" class="nav-item nav-link">Gallery</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Pages</a>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="blog.html" class="dropdown-item">Blog Page</a>
-                                <a href="single.html" class="dropdown-item">Single Page</a>
+                                <a href="/blog" class="dropdown-item">Blog Page</a>
+                                <a href="/single" class="dropdown-item">Single Page</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-1.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-1.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -135,7 +135,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-2.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-2.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -155,7 +155,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-3.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-3.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -175,7 +175,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-4.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-4.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -195,7 +195,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-5.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-5.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -215,7 +215,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <div class="blog-img">
-                                <img src="img/blog-6.jpg" alt="Blog">
+                                <img src="{{ url_for('static', path='img/blog-6.jpg') }}" alt="Blog">
                             </div>
                             <div class="blog-meta">
                                 <i class="fa fa-list-alt"></i>
@@ -314,16 +314,16 @@
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+        <link href="{{ url_for('static', path='lib/easing/easing.min.js') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='lib/owlcarousel/owl.carousel.min.js') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='lib/isotope/isotope.pkgd.min.js') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='lib/lightbox/js/lightbox.min.js') }}" rel="stylesheet">
+        
         <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
+        <link href="{{ url_for('static', path='mail/jqBootstrapValidation.min.js') }}" rel="stylesheet"> 
+        <link href="{{ url_for('static', path='mail/contact.js') }}" rel="stylesheet"> 
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <link href="{{ url_for('static', path='js/main.js') }}" rel="stylesheet"> 
     </body>
 </html>

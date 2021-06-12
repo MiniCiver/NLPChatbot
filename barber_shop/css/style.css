@@ -11,9 +11,8 @@ h1,
 h2, 
 h3, 
 h4,
-h5, 
 h6 {
-    color: #1d2434;
+    color: black;
 }
 
 a {
@@ -1415,7 +1414,7 @@ a:focus {
 /* ---------- GENERAL ---------- */
 body {
 	background: #e9e9e9;
-	color: #9a9a9a;
+	color: black;
 	font: 100%/1.5em "Droid Sans", sans-serif;
 	margin: 0;
 }
@@ -1465,6 +1464,7 @@ p { margin: 0; }
 .clearfix:before, .clearfix:after {
     content: "";
     display: table;
+    color: white!important;
 }
 .clearfix:after { clear: both; }
 
@@ -1481,7 +1481,7 @@ p { margin: 0; }
 #live-chat header {
 	background: #293239;
 	border-radius: 5px 5px 0 0;
-	color: #fff;
+	color: white!important;
 	cursor: pointer;
 	padding: 16px 24px;
 }
@@ -1513,7 +1513,23 @@ p { margin: 0; }
 	border-radius: 3px;
 	padding: 8px;
 	outline: none;
-	width: 234px;
+	width: 80%;
+}
+
+#live-chat h4 {
+    color: white;
+}
+
+#live-chat button {
+    background-color: white;
+    color: black;
+    border: 2px solid #5555;
+    transition-duration: 0.2s;
+}
+
+#live-chat button:hover {
+    background-color: black;
+    color: white;
 }
 
 .chat-message-counter {

@@ -21,6 +21,38 @@ class Data(BaseModel):
 async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request":request})
 
+@app.get('/about')
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request":request})
+
+@app.get('/blog')
+async def blog(request: Request):
+    return templates.TemplateResponse("blog.html", {"request":request})
+
+@app.get('/contact')
+async def contact(request: Request):
+    return templates.TemplateResponse("contact.html", {"request":request})
+
+@app.get('/portfolio')
+async def portfolio(request: Request):
+    return templates.TemplateResponse("portfolio.html", {"request":request})
+
+@app.get('/price')
+async def price(request: Request):
+    return templates.TemplateResponse("price.html", {"request":request})
+
+@app.get('/service')
+async def service(request: Request):
+    return templates.TemplateResponse("service.html", {"request":request})
+
+@app.get('/single')
+async def single(request: Request):
+    return templates.TemplateResponse("single.html", {"request":request})
+
+@app.get('/team')
+async def team(request: Request):
+    return templates.TemplateResponse("team.html", {"request":request})
+
 @app.post('/chat')
 def startchat(data: Data):
     dict_chat = mainchatbot.chat(data.chatInput)
