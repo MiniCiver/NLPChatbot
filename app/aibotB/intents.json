@@ -1,0 +1,63 @@
+{"intents": [
+    {"tag": "greeting",
+        "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+        "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+        "context": [""]
+    },
+    {"tag": "name",
+        "patterns": ["Name", "Tell me your name", "What is your name"],
+        "responses": ["My name is Aike"],
+        "context": [""]
+    },
+    {"tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+        "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+        "context": [""]
+    },
+    {"tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"],
+        "context": [""]
+    },
+    {"tag": "noanswer",
+        "patterns": [],
+        "responses": ["Sorry, can't understand you", "Not sure I understand"],
+        "context": [""]
+    },
+    {"tag": "location",
+        "patterns": ["Location", "Where are you located", "Where"],
+        "responses": ["We are on 1234 first Avenue. New York city, NY 1231"],
+        "context": [""]
+    },
+    {"tag": "phone",
+        "patterns": ["Phone", "Phone number", "Which is your phone number", "Get in touch", "How can I get in touch with you?"],
+        "responses": ["There's our phone number (800) 555-5555 or our e-mail dabir124e@gmail.com"],
+        "context": [""]
+    },
+    {"tag": "food",
+        "patterns": ["What do you sell?", "What is your menu?", "Bread", "Food", "Menu"],
+        "responses": ["We have 6 different types of cake"],
+        "context": [""]
+    },
+    {"tag": "chef",
+        "patterns": ["Do you have chefs?", "Chef"],
+        "responses": ["Yes, we have 3 chefs"],
+        "context": [""]
+    },
+    {"tag": "chef1",
+        "patterns": ["Olivia Logan", "Speciality"],
+        "responses": ["She is a cup cake Specialist"],
+        "context": [""]
+    },
+    {"tag": "chef2",
+        "patterns": ["Jessica Lewis", "Speciality"],
+        "responses": ["Se is a master Baker"],
+        "context": [""]
+    },
+    {"tag": "chef3",
+        "patterns": ["James Holt", "Speciality"],
+        "responses": ["He is a cake Specialist"],
+        "context": [""]
+    }
+]
+}

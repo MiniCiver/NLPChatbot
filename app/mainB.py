@@ -7,7 +7,7 @@ import uvicorn
 import numpy as np
 import json
 
-from aibot import mainchatbot
+from aibotB import mainchatbot
 
 app = FastAPI()
 
